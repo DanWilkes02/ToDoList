@@ -145,4 +145,8 @@ dependencies: /Users/danwilkes/Documents/Apps/ToDoList/todolist.cpp \
   ../../../../Qt/5.7/ios/include/QtWidgets/QWidget \
   ../../../../Qt/5.7/ios/include/QtWidgets/QMessageBox \
   ../../../../Qt/5.7/ios/include/QtWidgets/qmessagebox.h \
-  ../../../../Qt/5.7/ios/include/QtWidgets/qdialog.h
+  ../../../../Qt/5.7/ios/include/QtWidgets/qdialog.h \
+  ../../../../Qt/5.7/ios/include/QtCore/QDebug \
+  ../../../../Qt/5.7/ios/include/QtCore/qdebug.h \
+  ../../../../Qt/5.7/ios/include/QtCore/qtextstream.h \
+  ../../../../Qt/5.7/ios/include/QtCore/qcontiguouscache.h
