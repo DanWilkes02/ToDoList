@@ -15,8 +15,18 @@ public:
     explicit ToDoList(QWidget *parent = 0);
     ~ToDoList();
 
+private slots:
+
+    void on_toolButton_clicked();
+
+    void on_showButton_clicked();
+
+
+
 private:
     Ui::ToDoList *ui;
 };
+
+
 
 #endif // TODOLIST_H
