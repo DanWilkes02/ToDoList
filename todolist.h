@@ -19,7 +19,6 @@ private slots:
 
     void on_toolButton_clicked();
 
-    void on_showButton_clicked();
 
 
 

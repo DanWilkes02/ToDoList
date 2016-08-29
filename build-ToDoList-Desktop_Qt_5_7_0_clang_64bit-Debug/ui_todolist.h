@@ -14,16 +14,17 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QToolButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,13 +36,18 @@ public:
     QGridLayout *gridLayout;
     QSpacerItem *horizontalSpacer;
     QLabel *label;
-    QSpacerItem *horizontalSpacer_2;
-    QLineEdit *lineEdit;
-    QToolButton *toolButton;
-    QSpacerItem *verticalSpacer;
-    QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_4;
-    QPushButton *showButton;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer_6;
+    QVBoxLayout *verticalLayout;
+    QSpacerItem *horizontalSpacer_7;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_2;
+    QHBoxLayout *horizontalLayout;
+    QLineEdit *lineEdit;
+    QSpacerItem *horizontalSpacer_5;
+    QToolButton *toolButton;
+    QSpacerItem *horizontalSpacer_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QToolBar *toolBar;
@@ -63,7 +69,7 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalSpacer = new QSpacerItem(311, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(218, 21, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 0, 0, 1, 2);
 
@@ -75,36 +81,59 @@ public:
 
         gridLayout->addWidget(label, 0, 2, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(260, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(218, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer_2, 0, 3, 1, 3);
+        gridLayout->addItem(horizontalSpacer_4, 0, 3, 1, 2);
 
+        verticalSpacer = new QSpacerItem(20, 105, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 1, 2, 1, 1);
+
+        horizontalSpacer_6 = new QSpacerItem(218, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_6, 2, 0, 1, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+
+        gridLayout->addLayout(verticalLayout, 2, 1, 1, 3);
+
+        horizontalSpacer_7 = new QSpacerItem(218, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_7, 2, 4, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 105, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 3, 2, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(218, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 4, 0, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
 
-        gridLayout->addWidget(lineEdit, 2, 1, 1, 2);
+        horizontalLayout->addWidget(lineEdit);
+
+        horizontalSpacer_5 = new QSpacerItem(17, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_5);
 
         toolButton = new QToolButton(centralWidget);
         toolButton->setObjectName(QStringLiteral("toolButton"));
 
-        gridLayout->addWidget(toolButton, 2, 3, 1, 1);
+        horizontalLayout->addWidget(toolButton);
 
-        verticalSpacer = new QSpacerItem(20, 250, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addItem(verticalSpacer, 1, 2, 1, 1);
+        gridLayout->addLayout(horizontalLayout, 4, 1, 1, 3);
 
-        horizontalSpacer_3 = new QSpacerItem(263, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(218, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer_3, 2, 0, 1, 1);
-
-        horizontalSpacer_4 = new QSpacerItem(149, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_4, 2, 4, 1, 1);
-
-        showButton = new QPushButton(centralWidget);
-        showButton->setObjectName(QStringLiteral("showButton"));
-
-        gridLayout->addWidget(showButton, 2, 5, 1, 1);
+        gridLayout->addItem(horizontalSpacer_3, 4, 4, 1, 1);
 
         ToDoList->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ToDoList);
@@ -131,7 +160,6 @@ public:
         ToDoList->setWindowTitle(QApplication::translate("ToDoList", "ToDoList", 0));
         label->setText(QApplication::translate("ToDoList", "ToDo!", 0));
         toolButton->setText(QApplication::translate("ToDoList", "+", 0));
-        showButton->setText(QApplication::translate("ToDoList", "Show", 0));
         toolBar->setWindowTitle(QApplication::translate("ToDoList", "toolBar", 0));
     } // retranslateUi
 

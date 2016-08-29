@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ToDoList_t {
     QByteArrayData data[3];
-    char stringdata0[34];
+    char stringdata0[32];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,11 +30,11 @@ struct qt_meta_stringdata_ToDoList_t {
 static const qt_meta_stringdata_ToDoList_t qt_meta_stringdata_ToDoList = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "ToDoList"
-QT_MOC_LITERAL(1, 9, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(2, 33, 0) // ""
+QT_MOC_LITERAL(1, 9, 21), // "on_toolButton_clicked"
+QT_MOC_LITERAL(2, 31, 0) // ""
 
     },
-    "ToDoList\0on_pushButton_3_clicked\0"
+    "ToDoList\0on_toolButton_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +67,7 @@ void ToDoList::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         ToDoList *_t = static_cast<ToDoList *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_3_clicked(); break;
+        case 0: _t->on_toolButton_clicked(); break;
         default: ;
         }
     }

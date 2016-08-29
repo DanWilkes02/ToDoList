@@ -98,11 +98,12 @@ dependencies: /Users/danwilkes/Documents/Apps/ToDoList/todolist.cpp \
   ../../../../Qt/5.7/ios/include/QtCore/qlocale.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/QButtonGroup \
   ../../../../Qt/5.7/ios/include/QtWidgets/qbuttongroup.h \
-  ../../../../Qt/5.7/ios/include/QtWidgets/QHBoxLayout \
-  ../../../../Qt/5.7/ios/include/QtWidgets/qboxlayout.h \
+  ../../../../Qt/5.7/ios/include/QtWidgets/QGridLayout \
+  ../../../../Qt/5.7/ios/include/QtWidgets/qgridlayout.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/qlayout.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/qlayoutitem.h \
-  ../../../../Qt/5.7/ios/include/QtWidgets/qgridlayout.h \
+  ../../../../Qt/5.7/ios/include/QtWidgets/qboxlayout.h \
+  ../../../../Qt/5.7/ios/include/QtWidgets/QHBoxLayout \
   ../../../../Qt/5.7/ios/include/QtWidgets/QHeaderView \
   ../../../../Qt/5.7/ios/include/QtWidgets/qheaderview.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/qabstractitemview.h \
@@ -132,6 +133,7 @@ dependencies: /Users/danwilkes/Documents/Apps/ToDoList/todolist.cpp \
   ../../../../Qt/5.7/ios/include/QtWidgets/QMenuBar \
   ../../../../Qt/5.7/ios/include/QtWidgets/qmenubar.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/qmenu.h \
+  ../../../../Qt/5.7/ios/include/QtWidgets/QSpacerItem \
   ../../../../Qt/5.7/ios/include/QtWidgets/QStatusBar \
   ../../../../Qt/5.7/ios/include/QtWidgets/qstatusbar.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/QToolBar \
@@ -139,6 +141,7 @@ dependencies: /Users/danwilkes/Documents/Apps/ToDoList/todolist.cpp \
   ../../../../Qt/5.7/ios/include/QtWidgets/QToolButton \
   ../../../../Qt/5.7/ios/include/QtWidgets/qtoolbutton.h \
   ../../../../Qt/5.7/ios/include/QtWidgets/qabstractbutton.h \
+  ../../../../Qt/5.7/ios/include/QtWidgets/QVBoxLayout \
   ../../../../Qt/5.7/ios/include/QtWidgets/QWidget \
   ../../../../Qt/5.7/ios/include/QtWidgets/QMessageBox \
   ../../../../Qt/5.7/ios/include/QtWidgets/qmessagebox.h \
