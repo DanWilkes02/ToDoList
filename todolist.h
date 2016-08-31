@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 
+#include<vector>
+class TodoVeiw;
+
+
 namespace Ui {
 class ToDoList;
 }
@@ -18,12 +22,15 @@ public:
 private slots:
 
     void on_toolButton_clicked();
+    void delTodo(int);
 
 
 
 
 private:
     Ui::ToDoList *ui;
+    std::vector<TodoVeiw*> todoVeiw;
+    int max = 0;
 };
 
 

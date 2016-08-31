@@ -17,7 +17,7 @@ TodoVeiw::TodoVeiw(const QString& what, int index, QWidget* parent):QWidget(pare
     toDoLayout->addWidget(toDoBox);
     toDoLayout->addWidget(removeButton);
 
-    connect(removeButton, SIGNAL(clicked()), this, SLOT(enitIndex()));
+    connect(removeButton, SIGNAL(clicked()), this, SLOT(emitIndex()));
 }
 
 
