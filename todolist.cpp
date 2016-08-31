@@ -43,7 +43,7 @@ void ToDoList::on_toolButton_clicked() //On the 'add' button click
    if(widgetAmount < maxWidgets){
       ui->verticalLayout->addLayout(toDoLayout);
 
-      //Register one more widget
+        //Register one more widget
       ++widgetAmount;
       qDebug() << widgetAmount;
    }else{

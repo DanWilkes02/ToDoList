@@ -185,6 +185,7 @@ DIST          = /Users/Qt/5.7/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/qt_config.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/spec_post.prf \
+		../.qmake.stash \
 		/Users/Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/default_pre.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -353,6 +354,7 @@ Makefile: ../ToDoList.pro ../../../../Qt/5.7/clang_64/mkspecs/features/spec_pre.
 		../../../../Qt/5.7/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/default_pre.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -512,6 +514,7 @@ Makefile: ../ToDoList.pro ../../../../Qt/5.7/clang_64/mkspecs/features/spec_pre.
 ../../../../Qt/5.7/clang_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/5.7/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.7/clang_64/mkspecs/features/default_pre.prf:
 ../../../../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -635,7 +638,11 @@ main.o: ../main.cpp ../todolist.h \
 todolist.o: ../todolist.cpp ../todolist.h \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_todolist.h
+		ui_todolist.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o todolist.o ../todolist.cpp
 
 moc_todolist.o: moc_todolist.cpp 
