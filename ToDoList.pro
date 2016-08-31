@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        todolist.cpp
+        todolist.cpp \
+    todoveiw.cpp
 
-HEADERS  += todolist.h
+HEADERS  += todolist.h \
+    todoveiw.h
 
 FORMS    += todolist.ui

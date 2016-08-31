@@ -49,10 +49,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../main.cpp \
-		../todolist.cpp moc_todolist.cpp
+		../todolist.cpp \
+		../todoveiw.cpp moc_todolist.cpp \
+		moc_todoveiw.cpp
 OBJECTS       = main.o \
 		todolist.o \
-		moc_todolist.o
+		todoveiw.o \
+		moc_todolist.o \
+		moc_todoveiw.o
 DIST          = /Users/Qt/5.7/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/qdevice.pri \
 		/Users/Qt/5.7/clang_64/mkspecs/features/device_config.prf \
@@ -208,8 +212,10 @@ DIST          = /Users/Qt/5.7/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/exceptions.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/yacc.prf \
 		/Users/Qt/5.7/clang_64/mkspecs/features/lex.prf \
-		../../ToDoList.pro ../todolist.h ../main.cpp \
-		../todolist.cpp
+		../../ToDoList.pro ../todolist.h \
+		../todoveiw.h ../main.cpp \
+		../todolist.cpp \
+		../todoveiw.cpp
 QMAKE_TARGET  = ToDoList
 DESTDIR       = 
 TARGET        = ToDoList.app/Contents/MacOS/ToDoList
@@ -570,8 +576,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../todolist.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../main.cpp ../todolist.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../todolist.h ../todoveiw.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../main.cpp ../todolist.cpp ../todoveiw.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../todolist.ui $(DISTDIR)/
 
 
@@ -598,14 +604,22 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_todolist.cpp
+compiler_moc_header_make_all: moc_todolist.cpp moc_todoveiw.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_todolist.cpp
+	-$(DEL_FILE) moc_todolist.cpp moc_todoveiw.cpp
 moc_todolist.cpp: ../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../todolist.h \
 		../../../../Qt/5.7/clang_64/bin/moc
 	/Users/danwilkes/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/danwilkes/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/danwilkes/Documents/Apps/ToDoList -I/Users/danwilkes/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/danwilkes/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/danwilkes/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.3.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include -I'/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks (framework directory)' -F/Users/danwilkes/Qt/5.7/clang_64/lib ../todolist.h -o moc_todolist.cpp
+
+moc_todoveiw.cpp: ../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/Qwidget \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../todoveiw.h \
+		../../../../Qt/5.7/clang_64/bin/moc
+	/Users/danwilkes/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/danwilkes/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/danwilkes/Documents/Apps/ToDoList -I/Users/danwilkes/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/danwilkes/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/danwilkes/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.3.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include -I'/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks (framework directory)' -F/Users/danwilkes/Qt/5.7/clang_64/lib ../todoveiw.h -o moc_todoveiw.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -645,8 +659,24 @@ todolist.o: ../todolist.cpp ../todolist.h \
 		../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o todolist.o ../todolist.cpp
 
+todoveiw.o: ../todoveiw.cpp ../todoveiw.h \
+		../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/Qwidget \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QLineEdit \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QToolButton \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qtoolbutton.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QHBoxLayout \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qboxlayout.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o todoveiw.o ../todoveiw.cpp
+
 moc_todolist.o: moc_todolist.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_todolist.o moc_todolist.cpp
+
+moc_todoveiw.o: moc_todoveiw.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_todoveiw.o moc_todoveiw.cpp
 
 ####### Install
 
